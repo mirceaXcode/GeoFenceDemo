@@ -13,6 +13,7 @@
 		0844CFFF215979E3007B6057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0844CFFE215979E3007B6057 /* Assets.xcassets */; };
 		0844D002215979E3007B6057 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0844D000215979E3007B6057 /* LaunchScreen.storyboard */; };
 		0844D005215979E3007B6057 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0844D004215979E3007B6057 /* main.m */; };
+		0844D00D21597A03007B6057 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0844D00C21597A03007B6057 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0844D001215979E3007B6057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0844D003215979E3007B6057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0844D004215979E3007B6057 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0844D00C21597A03007B6057 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0844D00E21628635007B6057 /* trace.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = trace.gpx; path = "../../../../Coursera/Games,Sensors and Media/Week1/trace.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0844D00D21597A03007B6057 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +46,10 @@
 		0844CFE9215979E1007B6057 = {
 			isa = PBXGroup;
 			children = (
+				0844D00E21628635007B6057 /* trace.gpx */,
 				0844CFF4215979E1007B6057 /* GeoFenceDemo */,
 				0844CFF3215979E1007B6057 /* Products */,
+				0844D00B21597A02007B6057 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +75,14 @@
 				0844D004215979E3007B6057 /* main.m */,
 			);
 			path = GeoFenceDemo;
+			sourceTree = "<group>";
+		};
+		0844D00B21597A02007B6057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0844D00C21597A03007B6057 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
