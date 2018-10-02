@@ -22,6 +22,7 @@
 @property (nonatomic, assign) BOOL mapIsMoving;
 
 @property (strong, nonatomic) MKPointAnnotation *currentAnno;
+@property (strong, nonatomic) MKPointAnnotation *storeAnno;
 
 @property (strong, nonatomic) CLCircularRegion *geoRegion;
 
@@ -102,7 +103,7 @@
 
 -(void) setUpGeoRegion{
     // Create the Geographic region to be monitored
-    self.geoRegion = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(30.391149,-97.748294) radius:10 identifier:@"MyRegionIdentifier"];
+    self.geoRegion = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(30.390920,-97.747996) radius:10 identifier:@"MyRegionIdentifier"];
 }
 
 - (IBAction)switchTapped:(id)sender {
@@ -115,7 +116,7 @@
     }
     else {
         self.statusCheck.enabled = NO;
-        [self.locationManager startMonitoringForRegion:self.geoRegion];
+        [self.locationManager stopMonitoringForRegion:self.geoRegion];
         [self.locationManager stopUpdatingLocation];
         self.mapView.showsUserLocation = NO;
     }
@@ -168,17 +169,18 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
     
     self.eventLabel.text = @"Entered";
+    
 }
 
 -(void) locationManager:(CLLocationManager *)manager didExitRegion:(nonnull CLRegion *)region{
-    
+
     UILocalNotification *note = [[UILocalNotification alloc] init];
     note.fireDate = nil;
     note.repeatInterval = 0;
     note.alertTitle = @"GeoFence Alert!";
     note.alertBody = [NSString stringWithFormat:@"You left the geofence"];
     [[UIApplication sharedApplication] scheduleLocalNotification:note];
-    
+
     self.eventLabel.text = @"Exited";
 }
 
